@@ -1,0 +1,7 @@
+- name: Install docker dependecy
+  yum: state=present name={{ item }}
+  with_items:
+    - docker-io
+
+- name: Start docker service
+  service: name=docker state=started enabled=yes

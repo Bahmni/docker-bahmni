@@ -1,4 +1,5 @@
 FROM senthilrajar/bahmni_centos
+ARG rpm_version
 RUN echo -e "[bahmni] \nname=Bahmni development repository for RHEL/CentOS 6\nbaseurl=http://repo.mybahmni.org.s3-website-ap-southeast-1.amazonaws.com/rpm/bahmni/\nenabled=1\ngpgcheck=0\n" > /etc/yum.repos.d/bahmni.repo
 RUN yum install -y sudo openssh-server openssh-clients tar wget yum-plugin-ovl  ; yum clean all
 #RUN yum install -y yum-plugin-ovl ; yum clean all
