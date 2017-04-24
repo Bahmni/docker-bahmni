@@ -24,15 +24,3 @@ RUN sed -i "31,46 s/^/#/" /opt/bahmni-installer/bahmni-playbooks/roles/nagios-ag
 RUN bahmni -ilocal install
 RUN rm -rf /var/run/openerp/openerp-server.pid
 ENTRYPOINT service mysqld start && service postgresql-9.2 start && bahmni -ilocal start && service bahmni-lab restart && /bin/bash
-# Apache
-EXPOSE 443
-# OpenMRS
-EXPOSE 8050
-# OpenERP
-EXPOSE 8069
-#OpenELIS
-EXPOSE 8052
-# MySQL
-EXPOSE 3306
-# Postgresql
-EXPOSE 5432
