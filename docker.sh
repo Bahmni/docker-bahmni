@@ -1,5 +1,5 @@
 #!/bin/bash
-yum install -y docker
+yum install -y docker-io
 chkconfig docker on
 service docker start
 docker build --build-arg  rpm_version=$rpm_version  -t senthilrajar/bahmni_centos:$rpmversion .
